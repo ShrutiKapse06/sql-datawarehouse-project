@@ -1,4 +1,5 @@
 -- Create DB
+-- This script creates a database and three schemas. No need to run it again.
 
 CREATE DATABASE DataWarehouse;
 
