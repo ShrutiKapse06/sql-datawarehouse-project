@@ -5,7 +5,7 @@ Built a Modern Data Warehouse using SQL Server, includes ETL and Analytics.
 This project demonstrates the construction of a modern Data Warehouse using Microsoft SQL Server. It encompasses the full ETL (Extract, Transform, Load) pipeline and analytics, following the Medallion Architecture (Bronze, Silver, Gold layers). The implementation draws inspiration from Baraa Khatib Salkini's comprehensive tutorials on data warehousing.
 
 📁 Project Structure
-Bronze Layer: Raw data ingestion from CSV files into staging tables.
+Bronze Layer: Extracted and loaded CRM and ERP data from two CSV files into staging tables as part of the ETL pipeline.
 
 Silver Layer: Data cleansing, transformation, and normalization.
 
