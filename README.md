@@ -7,7 +7,7 @@ This project demonstrates the construction of a modern Data Warehouse using Micr
 📁 Project Structure
 Bronze Layer: Extracted and loaded CRM and ERP data from two CSV files into staging tables as part of the ETL pipeline.
 
-Silver Layer: Data cleansing, transformation, and normalization.
+Silver Layer: Creation of Integration Model, data cleansing, transformation, and normalization.
 
 Gold Layer: Business-ready data modeled into a star schema for reporting and analytics.
 
