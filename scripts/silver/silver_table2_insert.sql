@@ -1,0 +1,18 @@
+INSERT INTO silver.crm_prd_info (prd_id, prd_cat_id, prd_key, prd_nm, prd_cost, prd_line, prd_start_dt, prd_end_dt)
+
+SELECT
+	prd_id,
+	REPLACE(SUBSTRING(prd_key, 1, 5), '-', '_') AS prd_cat_id,
+	SUBSTRING(prd_key, 7, LEN(prd_key)) AS prd_key,
+	prd_nm,
+	COALESCE(prd_cost, 0) AS prd_cost,
+	CASE
+		WHEN prd_line = 'M' THEN 'Mountain'
+		WHEN prd_line = 'R' THEN 'Road'
+		WHEN prd_line = 'S' THEN 'Other Sales'
+		WHEN prd_line = 'T' THEN 'Touring'
+		ELSE 'unknown'
+	END AS prd_line,
+	prd_start_dt,
+	DATEADD(day, -1, LEAD(prd_start_dt) OVER (PARTITION BY prd_key ORDER BY prd_start_dt)) AS prd_end_dt
+FROM bronze.crm_prd_info
